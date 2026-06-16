@@ -50,7 +50,7 @@ router.put('/:id',
     */
     publicacionCtrl.modificarPublicacion);
 
-router.get('/busqueda/:titulo/:booleano', 
+router.get('/busqueda/:titulo/:vigente', 
     /*
     #swagger.tags = ['Publicacion']
     #swagger.summary = 'Buscar publicaciones por título y vigencia'

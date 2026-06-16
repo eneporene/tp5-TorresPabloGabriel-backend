@@ -78,7 +78,7 @@ publicacionCtrl.getBusquedaCombinada = async(req, res) => {
                 titulo:{
                     [Op.like]: `%${req.params.titulo}%`
                 },
-                vigente: req.params.booleano
+                vigente: req.params.vigente
             },
             include:[{
                 model: Empleado,

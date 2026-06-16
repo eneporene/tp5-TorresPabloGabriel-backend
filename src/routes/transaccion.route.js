@@ -9,12 +9,7 @@ const router = express.Router();
 router.get('/', 
     /*
     #swagger.tags = ['Transaccion']
-    #swagger.summary = 'Registrar una nueva transacción'
-    #swagger.parameters['body'] = {
-        in: 'body',
-        required: true,
-        schema: { $ref: '#/definitions/Transaccion' }
-    }
+    #swagger.summary = 'Obtener todas las transacciones'
     */
     transaccionCtrl.getAllTransacciones);
 
@@ -30,7 +25,7 @@ router.post("/",
     */
     transaccionCtrl.postAltaTransaccion);
 
-router.get("/cliente/:email", 
+router.get("/cliente/:emailCliente", 
     /*
     #swagger.tags = ['Transaccion']
     #swagger.summary = 'Obtener historial de transacciones de un cliente'

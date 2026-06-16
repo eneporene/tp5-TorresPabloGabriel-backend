@@ -8,9 +8,9 @@ const Publicacion = sequelize.define('Publicacion', {
 
     contenido: { type: DataTypes.STRING, allowNull: false },
 
-    ImagenAsociada: { type: DataTypes.STRING, allowNull: false },
+    imagenAsociada: { type: DataTypes.STRING, allowNull: false },
 
-    fechaPublicación: { type: DataTypes.STRING, allowNull: false },
+    fechaPublicacion: { type: DataTypes.STRING, allowNull: false },
 
     vigente: { type: DataTypes.BOOLEAN, allowNull: false }
 }, {

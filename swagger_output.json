@@ -153,18 +153,8 @@
         "tags": [
           "Transaccion"
         ],
-        "summary": "Registrar una nueva transacción",
+        "summary": "Obtener todas las transacciones",
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Transaccion"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -200,7 +190,7 @@
         }
       }
     },
-    "/api/transaccion/cliente/{email}": {
+    "/api/transaccion/cliente/{emailCliente}": {
       "get": {
         "tags": [
           "Transaccion"
@@ -208,12 +198,6 @@
         "summary": "Obtener historial de transacciones de un cliente",
         "description": "",
         "parameters": [
-          {
-            "name": "email",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "emailCliente",
             "in": "path",
@@ -433,7 +417,7 @@
         }
       }
     },
-    "/api/publicacion/busqueda/{titulo}/{booleano}": {
+    "/api/publicacion/busqueda/{titulo}/{vigente}": {
       "get": {
         "tags": [
           "Publicacion"
@@ -443,12 +427,6 @@
         "parameters": [
           {
             "name": "titulo",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "booleano",
             "in": "path",
             "required": true,
             "type": "string"

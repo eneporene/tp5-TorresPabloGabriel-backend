@@ -28,7 +28,7 @@ transaccionCtrl.getTransaccionesUnCliente = async (req, res) => {
     try {
         const transacciones = await Transaccion.findAll({
             where: {
-                emailCliente: req.params.email
+                emailCliente: req.params.emailCliente
             }
         });
         res.json(transacciones);
