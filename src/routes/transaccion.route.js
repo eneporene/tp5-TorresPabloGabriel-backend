@@ -6,14 +6,58 @@ const express = require("express");
 const router = express.Router();
 
 //definimos las rutas para la gestion de agente
-router.get('/', transaccionCtrl.getAllTransacciones);
-router.post("/", transaccionCtrl.postAltaTransaccion);
-router.get("/cliente/:email", transaccionCtrl.getTransaccionesUnCliente);
-router.get("/idioma/:origen/:destino", transaccionCtrl.getTransaccionesOrigenDestino);
-/* router.delete("/:id", transaccionCtrl.);
-router.put("/:id", transaccionCtrl.);
-router.get('/activos', transaccionCtrl.); */
+router.get('/', 
+    /*
+    #swagger.tags = ['Transaccion']
+    #swagger.summary = 'Registrar una nueva transacción'
+    #swagger.parameters['body'] = {
+        in: 'body',
+        required: true,
+        schema: { $ref: '#/definitions/Transaccion' }
+    }
+    */
+    transaccionCtrl.getAllTransacciones);
 
+router.post("/", 
+    /*
+    #swagger.tags = ['Transaccion']
+    #swagger.summary = 'Registrar una nueva transacción'
+    #swagger.parameters['body'] = {
+        in: 'body',
+        required: true,
+        schema: { $ref: '#/definitions/Transaccion' }
+    }
+    */
+    transaccionCtrl.postAltaTransaccion);
+
+router.get("/cliente/:email", 
+    /*
+    #swagger.tags = ['Transaccion']
+    #swagger.summary = 'Obtener historial de transacciones de un cliente'
+    #swagger.parameters['emailCliente'] = {
+        in: 'path',
+        required: true,
+        type: 'string'
+    }
+    */
+    transaccionCtrl.getTransaccionesUnCliente);
+
+router.get("/idioma/:origen/:destino", 
+    /*
+    #swagger.tags = ['Transaccion']
+    #swagger.summary = 'Buscar transacciones por idiomas'
+    #swagger.parameters['origen'] = {
+        in: 'path',
+        required: true,
+        type: 'string'
+    }
+    #swagger.parameters['destino'] = {
+        in: 'path',
+        required: true,
+        type: 'string'
+    }
+    */
+    transaccionCtrl.getTransaccionesOrigenDestino);
 
 //exportamos el modulo de rutas
 module.exports = router;

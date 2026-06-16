@@ -6,9 +6,36 @@ const express = require("express");
 const router = express.Router();
 
 //definimos las rutas para la gestion de agente
-router.get('/', empleadoCtrl.getAllEmpleados);
-router.post('/', empleadoCtrl.postDarDeAltaEmpleado);
-router.get('/:id', empleadoCtrl.getObtenerEmpleado);
+router.get('/', 
+    /*
+    #swagger.tags = ['Empleado']
+    #swagger.summary = 'Obtener todos los empleados'
+    */
+    empleadoCtrl.getAllEmpleados);
+
+router.post('/', 
+    /*
+    #swagger.tags = ['Empleado']
+    #swagger.summary = 'Crear un empleado'
+    #swagger.parameters['body'] = {
+        in: 'body',
+        required: true,
+        schema: { $ref: '#/definitions/Empleado' }
+    }
+    */
+    empleadoCtrl.postDarDeAltaEmpleado);
+
+router.get('/:id', 
+    /*
+    #swagger.tags = ['Empleado']
+    #swagger.summary = 'Obtener un empleado por ID'
+    #swagger.parameters['id'] = {
+        in: 'path',
+        required: true,
+        type: 'integer'
+    }
+    */
+    empleadoCtrl.getObtenerEmpleado);
 
 
 //exportamos el modulo de rutas
